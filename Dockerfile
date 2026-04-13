@@ -12,8 +12,8 @@ LABEL org.opencontainers.image.source="https://github.com/tagadvance/freecad"
 LABEL org.opencontainers.image.vendor="https://github.com/tagadvance"
 LABEL org.opencontainers.image.licenses="GNU Lesser General Public License v2.1"
 
-RUN groupadd --gid ${HOST_GID:-1000} freecad \
-    && useradd --uid ${HOST_UID:-1000} --gid ${HOST_GID:-1000} --create-home freecad \
+RUN groupadd --gid ${HOST_GID} freecad \
+    && useradd --uid ${HOST_UID} --gid ${HOST_GID} --create-home freecad \
     && apt update \
     && apt install -y freecad libgl1 \
     && apt clean \
